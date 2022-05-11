@@ -4,9 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Quiz Challenge</title>
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-    
+    <!-- Created Header with a title of the quiz -->
+    <header>
+        <h1>JavaScript Quiz</h1>
+    </header>
+
+    <br>
+    <br>
+    <!-- Created a container for the timer -->
+    <div class="timer-container">
+        <p id="timer">...sec</p>
+    </div>
+
+    <br>
+    <br>
+    <!-- created a container for the questions, answers, and buttons -->
+    <div class="container">
+        <!-- Gave the container that wraps the question and answers a class of hide, to hide this before the Start button is clicked -->
+        <div class="question-container" class = "hide">
+            <div id = "question">Question</div>
+            <div class="answer-container">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>           
+            </div>                   
+        <div class="controls">
+            <button id ="start-btn" class="start-btn btn">Start</button>
+            <button id ="next-btn" class="next-btn btn hide">Next</button>
+        </div>
+        </div>
+    </div>
+    <!-- Created a container for a place to store the high scores -->
+    <section class="high-scores">
+        <ol id="scores">
+            <li id ="score1">Score 1</li>
+            <li id ="score2">Score 2</li>
+            <li id ="score3">Score 3</li>
+            <li id ="score4">Score 4</li>
+            <li id ="score5">Score 5</li>
+        </ol>
 </body>
 </html>
