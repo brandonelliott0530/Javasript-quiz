@@ -25,19 +25,20 @@
     <!-- created a container for the questions, answers, and buttons -->
     <div class="container">
         <!-- Gave the container that wraps the question and answers a class of hide, to hide this before the Start button is clicked -->
-        <div class="question-container" class = "hide">
+        <div id="question-container" class ="hide">
             <div id = "question">Question</div>
-            <div class="answer-container">
+            <div id="answer-container">
                 <button class="btn">Answer 1</button>
                 <button class="btn">Answer 2</button>
                 <button class="btn">Answer 3</button>
                 <button class="btn">Answer 4</button>           
-            </div>                   
+            </div>  
+        </div>                     
         <div class="controls">
             <button id ="start-btn" class="start-btn btn">Start</button>
-            <button id ="next-btn" class="next-btn btn hide">Next</button>
+            <button id  ="next-btn" class="hide btn">Next</button>
         </div>
-        </div>
+        
     </div>
     <!-- Created a container for a place to store the high scores -->
     <section class="high-scores">
@@ -48,5 +49,6 @@
             <li id ="score4">Score 4</li>
             <li id ="score5">Score 5</li>
         </ol>
+    <script src="./assets/script.js"></script>
 </body>
 </html>

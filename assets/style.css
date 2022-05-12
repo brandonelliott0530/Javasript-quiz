@@ -19,7 +19,7 @@ header {
     width: 50%;
     margin-top: 15px;
     border-radius: 15px;
-    box-shadow: 5px 5px 10px #172121;
+    box-shadow: 0 0 10px #172121;
     
 
 
@@ -36,7 +36,7 @@ header {
     height: 100px;
     width: 10%;
     border-radius: 15px;
-    box-shadow: 5px 5px 10px #172121;
+    box-shadow: 0 0 10px #172121;
     flex: wrap
 }
 
@@ -53,11 +53,11 @@ header {
     height: 780px;
     width: 45%;
     border-radius: 15px;
-    box-shadow: 5px 5px 10px #172121
+    box-shadow: 0 0 10px #172121
 }
 
 /* We need this div to make it hidden at the beginning of the quiz */
-.question-container {
+#question-container {
     border-radius: 15px;
         
 }
@@ -75,16 +75,15 @@ header {
 
 }
 /* This block of code adds flex properties to the container for the answers */
-.answer-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 15px 0 25px 25px;
+#answer-container {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 15px 20px 15px 20px
 }
 /* This block of code adds styling to the answer buttons */
 .btn {
     margin: 25px 0;
-    width: auto;
     padding: 25px 10px;
     font-size: 20px;
     background-color: #00a9a5;
@@ -102,12 +101,23 @@ header {
     
 }
 
+.btn.correct {
+    background-color: green;
+
+}
+
+.btn.wrong {
+    background-color: red;
+    color: black
+}
+
 /* Created properties for the controls div */
 .controls {
     display: flex;
     flex-direction: row;
     flex: wrap;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
     padding: 0px 150px 25px 150px;
 }
 
@@ -127,38 +137,44 @@ header {
     margin-top: 35px;
     width: 10%;
     border-radius: 25px;
-    box-shadow: 5px 5px 10px #172121;
+    box-shadow: 0 0 10px #172121;
     color: #f7fff7;
     font-size: 24px;
     display: flex;
     flex: wrap;
     flex-direction: column;
     align-items: center;
-    text-decoration:underline
+    text-decoration:underline 
 }
 
-@media screen and (max-width: 1100px) {
-.high-scores {
-    font-size: 16px;
-}
-
-.btn {
-    font-size: 16px;
-}
-
-#question {
-    font-size: 20px;
-}
-
-#timer {
-    font-size: 20px;
-}
-
-header {
-    font-size: 24px;
-}
-
+.hide {
+    display: none;
+  
     
+}
+
+
+/* Media queries for different screen widths*/
+@media screen and (max-width: 1100px) {
+    .high-scores {
+        font-size: 16px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+
+    #question {
+        font-size: 20px;
+    }
+
+    #timer {
+        font-size: 20px;
+    }
+
+    header {
+        font-size: 24px;
+    }    
 }
 
 @media screen and (max-width: 995px) {
