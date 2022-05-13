@@ -1,21 +1,62 @@
+// TODO:
+// reduce seconds if a question is answered incorrectly
+// Stop game when timer gets to zero
+// Store right answers
+// When all questions are answered, store the score in the leaderboard
+// 
+
+
+
+
+
+
 
 // This is the list of variables used in the functions
-
+var timerEl = document.getElementById('timer')
 var startButton = document.getElementById('start-btn')
 var nextButton = document.getElementById('next-btn')
-
 var questionContainerEl = document.getElementById('question-container')
-
 // setting variables to select a random question
 var shuffledQuestions, currentQuestionIndex
 const questionEl = document.getElementById('question')
 var answerButtonsEl = document.getElementById('answer-container')
+// event listeners
 
 startButton.addEventListener('click', startGame)
+startButton.addEventListener('click', startCountdown)
 nextButton.addEventListener('click', () => {
     currentQuestionIndex++
     setNextQuestion()
 })
+
+// This function is for the countdown timer. Controlled by the click listener above
+function startCountdown(event) {
+    event.preventDefault
+    let counter = 5;
+    const interval = setInterval(() => {
+        console.log(counter);
+        counter--;
+        if(counter === 0) {
+            clearInterval(interval)
+            var restart = confirm('You have ran out of time, would you like to try again?')  
+            if (restart === true) {
+                startGame()
+                startCountdown()
+            }          
+                       
+        }
+        timerEl.textContent = counter + 's'
+    }, 1000);
+    
+    
+   
+    
+    
+    
+    
+}
+
+
 
 // start the game
 function startGame() {
@@ -70,11 +111,14 @@ function selectAnswer(e) {
     }else {
         startButton.innerText = "Restart"
         startButton.classList.remove("hide")
+        
     }
    
 }
+// Adds classes to the answers of correct and wrong
 function setStatusClass(element, correct) {
     clearStatusClass(element)
+
     if(correct) {
         element.classList.add('correct')
     } else {
